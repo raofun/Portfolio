@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import PropTypes from "prop-types";
 import Sidebar from "@/components/Sidebar";
 
 export default function RootLayout({ children }) {
@@ -9,3 +10,7 @@ export default function RootLayout({ children }) {
 		</>
 	);
 }
+
+RootLayout.propTypes = {
+	children: PropTypes.node.isRequired,
+};

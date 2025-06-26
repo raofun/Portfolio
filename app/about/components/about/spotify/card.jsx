@@ -60,6 +60,7 @@ useEffect(() => {
 									<a
 										href={result.songUrl}
 										target="_blank"
+										rel="noreferrer"
 										className="block font-semibold w-full truncate text-blue-500">
 										{result.title}
 									</a>

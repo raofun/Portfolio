@@ -13,10 +13,7 @@ import ProjectAll from "@/public/image/projects.png";
 import Hr from "@/components/Hr";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub, faLinkedin, faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const COLORS = {
@@ -32,7 +29,7 @@ const COLORS = {
 const MyPage = () => {
 	const fullpageOptions = {
 		anchors: ["home", "about", "projects", "contact"],
-		scrollingSpeed: 1000,
+		scrollingSpeed: 5000,
 		licenseKey: "gplv3-license",
 		menu: "#sidebar",
 		lockAnchors: false,
@@ -41,7 +38,7 @@ const MyPage = () => {
 	return (
 		<div style={{ background: COLORS.bg }}>
 			<ReactFullpage
-				render={({ state, fullpageApi }) => (
+				render={() => (
 					<ReactFullpage.Wrapper>
 						{/* HOME */}
 						<div className="section" style={{ background: COLORS.bg }}>
@@ -103,7 +100,7 @@ const MyPage = () => {
 										whileInView={{ x: 0, opacity: 1 }}
 										transition={{ delay: 0.4, type: "spring" }}
 									>
-										Hi! I&rsquo;m Raofun, a passionate frontend engineering student dedicated to learning and delivering quality work. I thrive in collaborative environments and value strong communication.
+										Hi! I&#39;m Raofun, a passionate Software engineering student dedicated to learning and delivering quality work. I thrive in collaborative environments and value strong communication.
 									</motion.p>
 									<motion.div
 										className="flex flex-row justify-center items-center space-x-4 mt-10"

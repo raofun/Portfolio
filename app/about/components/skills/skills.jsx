@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { CodepenIcon, WebhookIcon, ActivityIcon, MobileIcon } from "./icons"
+import PropTypes from "prop-types";
 
 const skillCategories = {
 	web: {
@@ -138,6 +139,16 @@ function SkillCard({ skill, isSelected, onClick }) {
 	);
 }
 
+SkillCard.propTypes = {
+	skill: PropTypes.shape({
+		icon: PropTypes.node,
+		title: PropTypes.string,
+		description: PropTypes.string,
+	}),
+	isSelected: PropTypes.bool.isRequired,
+	onClick: PropTypes.func.isRequired,
+};
+
 function SkillDetails({ selectedSkill }) {
 	if (!selectedSkill) return null;
 
@@ -202,6 +213,13 @@ function SkillDetails({ selectedSkill }) {
 		</motion.div>
 	);
 }
+
+SkillDetails.propTypes = {
+	selectedSkill: PropTypes.shape({
+		languages: PropTypes.arrayOf(PropTypes.string),
+		tools: PropTypes.arrayOf(PropTypes.string),
+	}),
+};
 
 export default function Skills() {
 	const [selectedCategory, setSelectedCategory] = useState("web");

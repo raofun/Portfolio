@@ -1,7 +1,8 @@
 import Footer from "@/components/Footer";
+import PropTypes from "prop-types";
 
 export const metadata = {
-  title: "Alvalens | About"
+  title: "Raofun | About"
 };
 export default function Layout({ children }) {
   return (
@@ -11,3 +12,7 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};

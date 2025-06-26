@@ -13,6 +13,7 @@ import { useState } from "react";
 import Me4 from "@/public/image/piel5.jpg";
 import Me5 from "@/public/image/piel8.jpg";
 import Me6 from "@/public/image/piel6.jpg";
+import PropTypes from "prop-types";
 
 function Wrapper({ children }) {
 	return (
@@ -352,3 +353,7 @@ export default function Education() {
 		</Wrapper>
 	);
 }
+
+Education.propTypes = {
+	children: PropTypes.node.isRequired,
+};

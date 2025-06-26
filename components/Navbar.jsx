@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import PropTypes from "prop-types";
 
 const NavItems = ({ isNavOpen, setIsNavOpen }) => {
 	const [isMobile, setIsMobile] = useState(false);
@@ -223,4 +224,10 @@ const Navbar = () => {
 		</>
 	);
 };
+
+NavItems.propTypes = {
+	isNavOpen: PropTypes.bool.isRequired,
+	setIsNavOpen: PropTypes.func.isRequired,
+};
+
 export default Navbar;

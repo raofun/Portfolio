@@ -2,6 +2,7 @@
 import Hr from "@/components/Hr";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const experiences = [
 	{
@@ -338,3 +339,35 @@ export default function Experience() {
 		</>
 	);
 }
+
+ExperienceCard.propTypes = {
+	experience: PropTypes.shape({
+		startDate: PropTypes.string,
+		endDate: PropTypes.string,
+		location: PropTypes.string,
+		company: PropTypes.string,
+		position: PropTypes.string,
+		type: PropTypes.string,
+		description: PropTypes.string,
+		skills: PropTypes.arrayOf(PropTypes.string),
+	}),
+	index: PropTypes.number.isRequired,
+	isEven: PropTypes.bool.isRequired,
+	children: PropTypes.node,
+};
+
+Experience.propTypes = {
+	experience: PropTypes.shape({
+		startDate: PropTypes.string,
+		endDate: PropTypes.string,
+		location: PropTypes.string,
+		company: PropTypes.string,
+		position: PropTypes.string,
+		type: PropTypes.string,
+		description: PropTypes.string,
+		skills: PropTypes.arrayOf(PropTypes.string),
+	}),
+	index: PropTypes.number.isRequired,
+	isEven: PropTypes.bool.isRequired,
+	children: PropTypes.node,
+};

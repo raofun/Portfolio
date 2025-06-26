@@ -2,6 +2,7 @@
 import "./style.css";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "./useIntersectionObserver";
+import PropTypes from "prop-types";
 
 function Wrapper({ children }) {
 	return (
@@ -91,3 +92,7 @@ export default function Quote() {
 		</Wrapper>
 	);
 }
+
+Wrapper.propTypes = {
+	children: PropTypes.node.isRequired,
+};

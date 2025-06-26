@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PropTypes from "prop-types";
 
 const FixedButton = ({ children, href = '/' }) => (
 	<Link
@@ -7,5 +8,10 @@ const FixedButton = ({ children, href = '/' }) => (
 		{children}
 	</Link>
 );
+
+FixedButton.propTypes = {
+	children: PropTypes.node.isRequired,
+	href: PropTypes.string.isRequired,
+};
 
 export default FixedButton;

@@ -2,6 +2,7 @@
 import { useState, useEffect, use } from "react";
 import { motion } from "framer-motion";
 import jsonData from "@/json/data.json";
+import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -209,5 +210,11 @@ function Page(props) {
 		</div>
 	);
 }
+
+Page.propTypes = {
+	params: PropTypes.shape({
+		slug: PropTypes.string.isRequired,
+	}),
+};
 
 export default Page;

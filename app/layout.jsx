@@ -7,44 +7,45 @@ import "./nprogress.css";
 import { Analytics } from "@vercel/analytics/react";
 import Chat from "@/components/Chat";
 import ClientTopProgressBar from "@/components/ClientTopProgressBar";
+import PropTypes from "prop-types";
 
 export const metadata = {
-    title: "Alvalens | Portofolio",
+	title: "Raofun | Portfolio",
 
-    description:
-		"My name is Alvalens, I'm a web developer and I'm passionate about it. I'm currently studying at Universitas Negeri Malang.",
+	description:
+		"My name is Raofun Azad, I'm a software engineering student and I'm passionate about it. I'm currently studying at Daffodil International University.",
 
-    author: "Alvalen Shafelbilyunazra",
-    siteUrl: "https://www.alvalens.my.id",
-    applicationName: "Alvalens",
+	author: "Raofun Azad",
+	siteUrl: "https://www.raofun.vercel.app",
+	applicationName: "Raofun",
 
-    keywords: [
-		"alvalens",
-		"alvalen",
-		"alvalen shafel",
-		"shafel",
-		"alvalen shafelbilyunazra",
-		"alvalen shafel bilyunazra",
-		"bloodfallen",
-		"alvalen porto",
-		"alvalen um",
+	keywords: [
+		"raofun",
+		"raofun azad",
+		"raofun portfolio",
+		"raofun software engineer",
+		"raofun developer",
+		"raofun diu",
+		"raofun daffodil",
+		"raofun student",
+		"raofun programming",
+		"raofun web developer",
 	],
 
-    openGraph: {
+	openGraph: {
 		type: "website",
-		url: "https://www.alvalens.my.id",
-		title: "Alvalens | Portofolio",
-		site_name: "Alvalens | Portofolio",
-		description: "My name is Alvalens, This is my portofolio website.",
+		url: "https://www.raofun.vercel.app",
+		title: "Raofun | Portfolio",
+		site_name: "Raofun | Portfolio",
+		description: "My name is Raofun Azad, This is my portfolio website.",
 		width: 1200,
 		height: 630,
 		images: [
 			{
 				url: "/og-image-rev.png",
-				alt: "Alvalens Portofolio",
+				alt: "Raofun Portfolio",
 			},
 		],
-		site_name: "Alvalens | Portofolio",
 	}
 };
 
@@ -61,3 +62,7 @@ export default function RootLayout({ children }) {
 		</html>
 	);
 }
+
+RootLayout.propTypes = {
+	children: PropTypes.node.isRequired,
+};

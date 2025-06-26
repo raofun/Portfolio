@@ -1,8 +1,9 @@
 // generate layour with footer
 import Footer from "@/components/Footer";
+import PropTypes from "prop-types";
 
 export const metadata = {
-  title: "Alvalens | Projects"
+  title: "Raofun | Projects"
 };
 export default function Layout({ children }) {
   return (
@@ -12,3 +13,7 @@ export default function Layout({ children }) {
     </>
   );
 }
+
+Layout.propTypes = {
+	children: PropTypes.node.isRequired,
+};

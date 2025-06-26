@@ -10,16 +10,11 @@ import {
 
 const Sidebar = () => {
 	const handleMoveToSection = (index) => {
-		fullpage_api.moveTo(index);
-		fullpage_api.getActiveSection();
+		if (typeof window !== "undefined" && window.fullpage_api) {
+			window.fullpage_api.moveTo(index);
+		}
 	};
 
-	const containIsActive = (index) => {
-		if (fullpage_api.getActiveSection().index === index) {
-			return "bg-gray-500";
-		}
-		return "";
-	};
 	return (
 		<div className="hidden md:flex fixed z-40 bg-gray-700 h-[40vh] w-12 flex-col justify-between items-center p-3 left-0 top-1/4 rounded-e-3xl">
 			<ul
