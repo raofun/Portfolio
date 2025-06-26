@@ -10,9 +10,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import Me4 from "@/public/image/me4.jpeg";
-import Me5 from "@/public/image/me5.jpg";
-import Me6 from "@/public/image/me6.jpg";
+import Me4 from "@/public/image/piel5.jpg";
+import Me5 from "@/public/image/piel8.jpg";
+import Me6 from "@/public/image/piel6.jpg";
 
 function Wrapper({ children }) {
 	return (
@@ -154,7 +154,7 @@ export default function Education() {
 						Education
 					</h1>
 					<p className="text-muted-foreground max-w-[800px] mx-auto">
-						Get to know more about my educational background.
+						Discover more about my educational journey.
 					</p>
 				</motion.div>
 				{/* Main Content */}
@@ -165,13 +165,13 @@ export default function Education() {
 						initial={{ opacity: 0, x: -50 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}>
-						<div className="font-medium text-lg mb-4">2022 - Present</div>
+						<div className="font-medium text-lg mb-4">2023 - Present</div>
 						<div>
 							<h2 className="font-semibold text-xl">
-								Universitas Negeri Malang
+								Daffodil International University
 							</h2>
 							<h3 className="text-md font-normal mb-3">
-								S1 Teknik Informatika | Computer Science
+								Department Of Software Engineering
 							</h3>
 							<div className="gap-4 mb-4 flex items-stretch md:h-[300px] xl:h-[400px]">
 								<div className="flex-[1] transition-all duration-300 ease-in-out hover:flex-[3] group">

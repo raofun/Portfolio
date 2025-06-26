@@ -1,28 +1,33 @@
-// Copyright (C) 2025 Alvalen Bilyunazra
-// This file is part of Alvalens-porto-2-nextJs.
-// Licensed under the GNU GPL v3.0. See LICENSE for details.
-
 "use client";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Image from "next/legacy/image";
-// import "../globals.css";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 // components
 import Button from "@/components/Button";
-import Me from "@/public/image/me.jpg";
-import MeAbout from "@/public/image/me2.jpg";
+import Me from "@/public/image/piel.jpg";
+import MeAbout from "@/public/image/piel2.jpg";
 import Setup from "@/public/image/setup.jpg";
 import ProjectAll from "@/public/image/projects.png";
 import Hr from "@/components/Hr";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+const COLORS = {
+	primary: "#1e293b", // slate-800
+	secondary: "#64748b", // slate-500
+	accent: "#6366f1", // indigo-500
+	bg: "#f8fafc", // slate-50
+	card: "#ffffff", // white
+	text: "#0f172a", // slate-900
+	muted: "#94a3b8", // slate-400
+};
 
 const MyPage = () => {
 	const fullpageOptions = {
@@ -34,379 +39,431 @@ const MyPage = () => {
 	};
 
 	return (
-		<div>
+		<div style={{ background: COLORS.bg }}>
 			<ReactFullpage
 				render={({ state, fullpageApi }) => (
 					<ReactFullpage.Wrapper>
-						<div className="section">
-							<div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-4 p-10 overflow-hidden md:px-20">
+						{/* HOME */}
+						<div className="section" style={{ background: COLORS.bg }}>
+							<div className="mx-auto container grid grid-cols-1 md:grid-cols-3 gap-8 p-10 md:px-24">
 								<motion.div
 									className="col-span-2 flex flex-col justify-center items-center md:items-start text-center md:text-start"
 									initial={{ x: -100, opacity: 0 }}
 									whileInView={{ x: 0, opacity: 1 }}
-									transition={{
-										type: "spring",
-									}}>
+									transition={{ type: "spring" }}
+								>
 									<div className="block md:hidden col-span-1 mx-auto my-10">
-										<div className="bg-slate-500 rounded-full h-60 w-60 grayscale hover:grayscale-0 transition-all ease duration-300">
+										<div
+											className="rounded-full h-60 w-60 shadow-lg border-4 border-indigo-200 overflow-hidden"
+											style={{
+												background: COLORS.card,
+												transition: "filter 0.3s",
+												filter: "grayscale(80%)",
+											}}
+										>
 											<Image
 												src={Me}
 												width={500}
 												height={500}
-												className="rounded-full w-full h-full object-cover "
-												alt="Alvalens"
+												className="rounded-full w-full h-full object-cover"
+												alt="Raofun"
 												placeholder="blur"
+												style={{ filter: "grayscale(80%)" }}
+												onMouseOver={e => (e.currentTarget.style.filter = "none")}
+												onMouseOut={e => (e.currentTarget.style.filter = "grayscale(80%)")}
 											/>
 										</div>
 									</div>
 									<motion.h3
-										className="uppercase text-xl mb-3 font-normal text tracking-[.5rem] text-gray-500"
+										className="uppercase text-lg mb-2 font-medium tracking-[.3em]"
+										style={{ color: COLORS.accent, letterSpacing: ".3em" }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.2,
-											type: "spring",
-										}}>
-										Alvalen Shafel
+										transition={{ delay: 0.2, type: "tween" }}
+									>
+										Raofun Azad Piel
 									</motion.h3>
 									<motion.h1
-										className="text-black text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold my-2 md:my-5"
+										className="text-5xl md:text-6xl lg:text-7xl font-extrabold my-2 md:my-5"
+										style={{
+											color: COLORS.text,
+											lineHeight: 1.1,
+											textShadow: "0 2px 8px rgba(99,102,241,0.08)",
+										}}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.3,
-											type: "spring",
-										}}>
-										Full Stack Developer
+										transition={{ delay: 0.3, type: "spring" }}
+									>
+										Software Engineering Student
 									</motion.h1>
 									<motion.p
-										className="title text-md  2xl:text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem]"
+										className="text-lg mt-4 tracking-wide"
+										style={{ color: COLORS.secondary, maxWidth: 600 }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.4,
-											type: "spring",
-										}}>
-										Hi! I&rsquo;am Alvalen, A junior fullstack developer specializing in
-										modern Web Development with a growing focus on Artificial
-										Intelligence. Passionate about building scalable,
-										user-friendly web applications and exploring AI technologies
-										such as generative models and LLM integration.
+										transition={{ delay: 0.4, type: "spring" }}
+									>
+										Hi! I&rsquo;m Raofun, a passionate frontend engineering student dedicated to learning and delivering quality work. I thrive in collaborative environments and value strong communication.
 									</motion.p>
 									<motion.div
-										className="buttons flex flex-row justify-center items-center space-x-4 mt-10"
+										className="flex flex-row justify-center items-center space-x-4 mt-10"
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.5,
-											type: "spring",
+										transition={{ delay: 0.5, type: "spring" }}
+									>
+										<Button variation="primary" style={{
+											background: COLORS.accent,
+											color: "#fff",
+											border: "none",
+											fontWeight: "bold",
+											boxShadow: "0 2px 8px rgba(99,102,241,0.15)"
 										}}>
-										<Button variation="primary">
 											<Link
-												href={"/docs/cv.pdf"}
+												href={"/docs/Raofun_CV.pdf"}
 												target="_blank"
 												rel="noopener noreferrer"
-												download>
-												Download CV
+												download
+											>
+												Resume
 											</Link>
 										</Button>
-										<Button variation="secondary">
+										<Button variation="secondary" style={{
+											background: COLORS.card,
+											color: COLORS.accent,
+											border: `2px solid ${COLORS.accent}`,
+											fontWeight: "bold"
+										}}>
 											<a href="#contact">Contact Me</a>
 										</Button>
 									</motion.div>
 								</motion.div>
 								<motion.div
-									className="hidden md:flex col-span-1 mx-auto justify-center items-center "
+									className="hidden md:flex col-span-1 mx-auto justify-center items-center"
 									initial={{ x: 100, opacity: 0 }}
 									whileInView={{ x: 0, opacity: 1 }}
-									transition={{
-										delay: 0.7,
-										type: "spring",
-									}}>
-									<div className="rounded-full h-auto w-auto  lg:px-12 grayscale hover:grayscale-0 transition-all ease duration-300">
+									transition={{ delay: 0.7, type: "spring" }}
+								>
+									<div
+										className="rounded-full shadow-xl border-4 border-indigo-200 overflow-hidden"
+										style={{
+											background: COLORS.card,
+											padding: "2rem",
+											filter: "grayscale(80%)",
+											transition: "filter 0.3s",
+										}}
+										onMouseOver={e => (e.currentTarget.style.filter = "none")}
+										onMouseOut={e => (e.currentTarget.style.filter = "grayscale(80%)")}
+									>
 										<Image
 											src={Me}
 											width={400}
 											height={550}
 											placeholder="blur"
-											alt="Alvalens"
+											alt="Raofun"
 											className="rounded-full w-full h-full object-cover"
 										/>
 									</div>
 								</motion.div>
 							</div>
 						</div>
-						<div className="section">
+						{/* ABOUT */}
+						<div className="section" style={{ background: COLORS.bg }}>
 							<div className="relative md:h-screen w-screen gap-4 flex justify-center items-center flex-col overflow-hidden">
-								<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
+								<div className="z-0 mb-48 md:mb-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16">
 									<motion.div
-										className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-										initial={{
-											x: 300,
-											opacity: 0,
-											z: -100,
+										className="rounded-xl shadow-2xl overflow-hidden"
+										style={{
+											background: COLORS.card,
+											height: "400px",
+											width: "80vw",
+											maxWidth: "500px",
+											border: `4px solid ${COLORS.accent}`,
 										}}
-										whileInView={{
-											x: 0,
-											opacity: 1,
-											z: 0,
-										}}
+										initial={{ x: 300, opacity: 0, z: -100 }}
+										whileInView={{ x: 0, opacity: 1, z: 0 }}
 										transition={{
 											delay: 0.5,
 											type: "spring",
 											stiffness: 100,
 											damping: 20,
-										}}>
+										}}
+									>
 										<Image
 											src={MeAbout}
 											layout="fill"
 											className="object-cover"
-											alt="Alvalens"
+											alt="Raofun"
 											placeholder="blur"
 										/>
 									</motion.div>
 								</div>
-								<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
+								<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 py-5">
 									<motion.h1
-										className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold"
+										className="text-5xl md:text-7xl font-extrabold"
+										style={{ color: COLORS.text }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.1,
-											type: "spring",
-										}}>
+										transition={{ delay: 0.1, type: "spring" }}
+									>
 										About Me
 									</motion.h1>
 									<Hr />
 									<motion.p
-										className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+										className="text-xl mt-4 tracking-wide"
+										style={{ color: COLORS.secondary, maxWidth: 600 }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.2,
-											type: "spring",
-										}}>
-										A brief introduction about me and my interest.
+										transition={{ delay: 0.2, type: "spring" }}
+									>
+										A brief introduction about me and my interest in frontend engineering.
 									</motion.p>
 									<motion.div
 										initial={{ y: 40, opacity: 0 }}
 										whileInView={{ y: 0, opacity: 1 }}
-										transition={{
-											delay: 0.3,
-											type: "spring",
+										transition={{ delay: 0.3, type: "spring" }}
+									>
+										<Button variation="primary" style={{
+											background: COLORS.accent,
+											color: "#fff",
+											border: "none",
+											fontWeight: "bold"
 										}}>
-										<Button variation="primary">
 											<Link href="/about">Learn More</Link>
 										</Button>
 									</motion.div>
 								</div>
 							</div>
 						</div>
-						<div className="section">
+						{/* PROJECTS */}
+						<div className="section" style={{ background: COLORS.bg }}>
 							<div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
-								<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
+								<div className="z-0 mb-48 md:mb-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16">
 									<motion.div
-										className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0 "
-										initial={{
-											x: 300,
-											opacity: 0,
-											z: -100,
+										className="rounded-xl shadow-2xl overflow-hidden"
+										style={{
+											background: COLORS.card,
+											height: "400px",
+											width: "80vw",
+											maxWidth: "500px",
+											border: `4px solid ${COLORS.accent}`,
 										}}
-										whileInView={{
-											x: 0,
-											opacity: 1,
-											z: 0,
-										}}
+										initial={{ x: 300, opacity: 0, z: -100 }}
+										whileInView={{ x: 0, opacity: 1, z: 0 }}
 										transition={{
 											delay: 0.5,
 											type: "spring",
 											stiffness: 100,
 											damping: 20,
-										}}>
+										}}
+									>
 										<Image
 											src={ProjectAll}
 											layout="fill"
 											className="object-cover"
-											alt="Alvalens Setup"
+											alt="Raofun"
 											placeholder="blur"
 										/>
 									</motion.div>
 								</div>
-								<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 py-5">
+								<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 py-5">
 									<motion.h1
-										className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold"
+										className="text-5xl md:text-7xl font-extrabold"
+										style={{ color: COLORS.text }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.1,
-											type: "spring",
-										}}>
+										transition={{ delay: 0.1, type: "spring" }}
+									>
 										My Projects
 									</motion.h1>
 									<Hr />
 									<motion.p
-										className="title  text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+										className="text-xl mt-4 tracking-wide"
+										style={{ color: COLORS.secondary, maxWidth: 600 }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.2,
-											type: "spring",
-										}}>
-										This is some of my projects that I have done{" "}
-										<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-											{" "}
-											and currently working on.
-										</span>
+										transition={{ delay: 0.2, type: "spring" }}
+									>
+										Here are some of my projects, including those I'm currently working on.
 									</motion.p>
 									<motion.div
 										initial={{ y: 40, opacity: 0 }}
 										whileInView={{ y: 0, opacity: 1 }}
-										transition={{
-											delay: 0.3,
-											type: "spring",
+										transition={{ delay: 0.3, type: "spring" }}
+									>
+										<Button variation="primary" style={{
+											background: COLORS.accent,
+											color: "#fff",
+											border: "none",
+											fontWeight: "bold"
 										}}>
-										<Button variation="primary">
 											<Link href="/projects">Learn More</Link>
 										</Button>
 									</motion.div>
 								</div>
 							</div>
 						</div>
-						<div className="section">
-							<div className="relative md:h-screen w-screen  gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
-								<div className="z-0 mb-48 md:mb-0  md:absolute top-1/4  md:right-[10%] md:-translate-y-16 ">
+						{/* CONTACT */}
+						<div className="section" style={{ background: COLORS.bg }}>
+							<div className="relative md:h-screen w-screen gap-4 p-10 flex justify-center items-center flex-col overflow-hidden">
+								<div className="z-0 mb-48 md:mb-0 md:absolute top-1/4 md:right-[10%] md:-translate-y-16">
 									<motion.div
-										className="bg-slate-300 rounded-sm h-[400px] md:h-[600px] w-[80vw] md:w-[30vw] grayscale hover:grayscale-0"
-										initial={{
-											x: 300,
-											opacity: 0,
-											z: -100,
+										className="rounded-xl shadow-2xl overflow-hidden"
+										style={{
+											background: COLORS.card,
+											height: "400px",
+											width: "80vw",
+											maxWidth: "500px",
+											border: `4px solid ${COLORS.accent}`,
 										}}
-										whileInView={{
-											x: 0,
-											opacity: 1,
-											z: 0,
-										}}
+										initial={{ x: 300, opacity: 0, z: -100 }}
+										whileInView={{ x: 0, opacity: 1, z: 0 }}
 										transition={{
 											delay: 0.5,
 											type: "spring",
 											stiffness: 100,
 											damping: 20,
-										}}>
+										}}
+									>
 										<Image
 											src={Setup}
 											layout="fill"
 											className="object-cover"
-											alt="Alvalens Setup"
+											alt="Raofun"
 											placeholder="blur"
 										/>
 									</motion.div>
 								</div>
-								<div className="z-10 w-full absolute md:w-auto  md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 overflow-hidden">
+								<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start text-start px-10 overflow-hidden">
 									<motion.h1
-										className="bg-white lg:bg-transparent bg-opacity-50 px-3 md-px-0 text-black text-5xl md:text-8xl font-bold mb-3"
+										className="text-5xl md:text-7xl font-extrabold mb-3"
+										style={{ color: COLORS.text }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.1,
-											type: "spring",
-										}}>
+										transition={{ delay: 0.1, type: "spring" }}
+									>
 										Get In Touch
 									</motion.h1>
 									<Hr />
 									<motion.p
-										className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] md:mb-5"
+										className="text-xl mt-4 tracking-wide"
+										style={{ color: COLORS.secondary, maxWidth: 600 }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.2,
-											type: "spring",
-										}}>
-										Feel free to contact me if you have any{" "}
-										<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
-											questions or just want to say hi.
-										</span>
+										transition={{ delay: 0.2, type: "spring" }}
+									>
+										Feel free to contact me if you have any questions or just want to say hi.
 									</motion.p>
 									<motion.p
-										className="title text-xl mt-4 tracking-wider text-gray-500 leading-[1.7rem] mb-5"
+										className="text-xl mt-4 tracking-wide mb-5"
+										style={{ color: COLORS.accent, fontWeight: "bold" }}
 										initial={{ x: -100, opacity: 0 }}
 										whileInView={{ x: 0, opacity: 1 }}
-										transition={{
-											delay: 0.3,
-											type: "spring",
-										}}>
-										<a href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,">
-											alvalen.shafel04@gmail.com
+										transition={{ delay: 0.3, type: "spring" }}
+									>
+										<a href="mailto:raofun.azad15@gmail.com?subject=Hello&body=Hello Raofun,">
+											raofun.azad15@gmail.com
 										</a>
 									</motion.p>
 									{/* icons */}
-									<div className="flex justify-center items-center space-x-4">
+									<div className="flex justify-center items-center space-x-4 mt-2">
 										<motion.a
-											href="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello Alvalens,"
-											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+											href="mailto:raofun.azad15@gmail.com?subject=Hello&body=Hello Raofun,"
+											className="flex justify-center items-center w-14 h-14 rounded-full"
+											style={{
+												background: COLORS.accent,
+												color: "#fff",
+												boxShadow: "0 2px 8px rgba(210, 247, 151, 0.53)",
+												fontSize: "1.7rem",
+												transition: "background 0.2s",
+											}}
 											initial={{ y: 40, opacity: 0 }}
 											whileInView={{ y: 0, opacity: 1 }}
 											transition={{
 												y: { delay: 0.1 },
 												opacity: { delay: 0.2 },
-											}}>
-											<FontAwesomeIcon icon={faEnvelope} className="text-3xl" />
+											}}
+										>
+											<FontAwesomeIcon icon={faEnvelope} />
 										</motion.a>
-
 										<motion.a
-											href="https://github.com/Alvalens"
+											href="https://github.com/raofun"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+											className="flex justify-center items-center w-14 h-14 rounded-full"
+											style={{
+												background: COLORS.primary,
+												color: "#fff",
+												fontSize: "1.7rem",
+												transition: "background 0.2s",
+											}}
 											initial={{ opacity: 0, y: 40 }}
 											whileInView={{ opacity: 1, y: 0 }}
 											transition={{
 												y: { delay: 0.2 },
 												opacity: { delay: 0.3 },
-											}}>
-											<FontAwesomeIcon icon={faGithub} className="text-3xl" />
+											}}
+										>
+											<FontAwesomeIcon icon={faGithub} />
 										</motion.a>
 										<motion.a
-											href="https://www.instagram.com/alvalens_/"
+											href="https://www.facebook.com/piel.bhuyian"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+											className="flex justify-center items-center w-14 h-14 rounded-full"
+											style={{
+												background: "#3077e1",
+												color: "#fff",
+												fontSize: "1.7rem",
+												transition: "background 0.2s",
+											}}
 											initial={{ opacity: 0, y: 40 }}
 											whileInView={{ opacity: 1, y: 0 }}
 											transition={{
 												y: { delay: 0.3 },
 												opacity: { delay: 0.4 },
-											}}>
-											<FontAwesomeIcon
-												icon={faInstagram}
-												className="text-3xl"
-											/>
+											}}
+										>
+											<FontAwesomeIcon icon={faFacebook} />
 										</motion.a>
 										<motion.a
-											href="https://www.linkedin.com/in/alvalen-shafel-8a081a254/"
+											href="https://www.linkedin.com/in/raofun-azad15"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+											className="flex justify-center items-center w-14 h-14 rounded-full"
+											style={{
+												background: "#0a66c2",
+												color: "#fff",
+												fontSize: "1.7rem",
+												transition: "background 0.2s",
+											}}
 											initial={{ opacity: 0, y: 40 }}
 											whileInView={{ opacity: 1, y: 0 }}
 											transition={{
 												y: { delay: 0.4 },
 												opacity: { delay: 0.5 },
-											}}>
-											<FontAwesomeIcon icon={faLinkedin} className="text-3xl" />
+											}}
+										>
+											<FontAwesomeIcon icon={faLinkedin} />
 										</motion.a>
 										<motion.a
-											href="https://discordapp.com/users/bloody#6118"
+											href="https://discord.com/users/828995672081694730"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="flex justify-center items-center bg-gray-700 w-14 h-14 rounded-full text-gray-100 hover:bg-gray-400 transition-all ease-in-out duration-300"
+											className="flex justify-center items-center w-14 h-14 rounded-full"
+											style={{
+												background: "#5865F2",
+												color: "#fff",
+												fontSize: "1.7rem",
+												transition: "background 0.2s",
+											}}
 											initial={{ opacity: 0, y: 40 }}
 											whileInView={{ opacity: 1, y: 0 }}
 											transition={{
 												y: { delay: 0.5 },
 												opacity: { delay: 0.6 },
-											}}>
-											<FontAwesomeIcon icon={faDiscord} className="text-3xl" />
+											}}
+										>
+											<FontAwesomeIcon icon={faDiscord} />
 										</motion.a>
 									</div>
 								</div>

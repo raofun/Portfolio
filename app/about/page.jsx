@@ -13,7 +13,7 @@ import Experience from "./components/experience.jsx";
 import Education from "./components/education.jsx";
 
 // images
-import Hero from "@/public/image/me2.jpg";
+import Hero from "@/public/image/piel2.jpg";
 
 import Hr from "@/components/Hr";
 import About from "./components/about/about.jsx";
@@ -51,14 +51,14 @@ export default function Page() {
 					</div>
 					<div className="z-10 w-full absolute md:w-auto md:left-[10%] top-[60%] md:top-1/3 col-span-2 flex flex-col justify-center items-start md:items-start text-start px-10 pt-4 backdrop-filter backdrop-blur-sm md:backdrop-blur-none bg-gray-100 bg-opacity-50 md:bg-transparent md:pt-0">
 						<h1 className="md:bg-white bg-transparent lg:bg-transparent bg-opacity-50 md:px-0 text-black text-5xl md:text-8xl font-bold">
-							About Me
+							Know Me
 						</h1>
 						<Hr />
 						<p className="title text-xl mt-4 tracking-wider text-gray-900 leading-[1.7rem] mb-5 ">
-							A brief introduction about me and{" "}
+							A quick glimpse into my world and{" "}
 							<span className="bg-transparent md:bg-gray-100 bg-opacity-50 xl:bg-transparent">
 								{" "}
-								my interest.
+								my interests.
 							</span>
 						</p>
 						<motion.div
@@ -82,6 +82,10 @@ export default function Page() {
 				<About />
 				{/* end about */}
 
+				{/* Education */}
+				<Education />
+				{/* end Education */}
+
 				{/* skills */}
 				<Skills />
 				{/* end skills */}
@@ -89,10 +93,6 @@ export default function Page() {
 				{/* experience */}
 				<Experience />
 				{/* end experience */}
-
-				{/* Education */}
-				<Education />
-				{/* end Education */}
 
 				{/* Quote */}
 				<Quote />
