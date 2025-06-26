@@ -1,9 +1,6 @@
 import querystring from "querystring";
 import { Buffer } from "buffer"; // Import Buffer
 
-const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID || "";
-const clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET || "";
-const refresh_token = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN || "";
 
 const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 const getAccessToken = async () => {

@@ -212,7 +212,7 @@ const MyPage = () => {
 										whileInView={{ x: 0, opacity: 1 }}
 										transition={{ delay: 0.2, type: "spring" }}
 									>
-										A brief introduction about me and my interest in frontend engineering.
+										A brief introduction about me and my interest in software engineering.
 									</motion.p>
 									<motion.div
 										initial={{ y: 40, opacity: 0 }}
@@ -280,7 +280,7 @@ const MyPage = () => {
 										whileInView={{ x: 0, opacity: 1 }}
 										transition={{ delay: 0.2, type: "spring" }}
 									>
-										Here are some of my projects, including those I'm currently working on.
+										Here are some of my projects, including those I am currently working on.
 									</motion.p>
 									<motion.div
 										initial={{ y: 40, opacity: 0 }}

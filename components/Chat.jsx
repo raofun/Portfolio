@@ -11,7 +11,6 @@ const Chat = () => {
 			I.iticks = { host: c, settings: s, clientId: k, cdn: L, queue: [] };
 			var h = T.head || T.documentElement;
 			var e = T.createElement(i);
-			var l = I.location;
 			e.async = true;
 			e.src = (L || c) + "/client/inject-v2.min.js";
 			h.insertBefore(e, h.firstChild);

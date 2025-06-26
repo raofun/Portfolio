@@ -181,6 +181,21 @@ function TimelineCard({ experience, index, isEven }) {
 	);
 }
 
+TimelineCard.propTypes = {
+	experience: PropTypes.shape({
+		startDate: PropTypes.string,
+		endDate: PropTypes.string,
+		location: PropTypes.string,
+		company: PropTypes.string,
+		position: PropTypes.string,
+		type: PropTypes.string,
+		description: PropTypes.string,
+		skills: PropTypes.arrayOf(PropTypes.string),
+	}),
+	index: PropTypes.number.isRequired,
+	isEven: PropTypes.bool.isRequired,
+};
+
 function ExperienceCard({ experience, index, isEven }) {
 	return (
 		<motion.div
@@ -228,6 +243,21 @@ function ExperienceCard({ experience, index, isEven }) {
 	);
 }
 
+ExperienceCard.propTypes = {
+	experience: PropTypes.shape({
+		startDate: PropTypes.string,
+		endDate: PropTypes.string,
+		location: PropTypes.string,
+		company: PropTypes.string,
+		position: PropTypes.string,
+		type: PropTypes.string,
+		description: PropTypes.string,
+		skills: PropTypes.arrayOf(PropTypes.string),
+	}),
+	index: PropTypes.number.isRequired,
+	isEven: PropTypes.bool.isRequired,
+};
+
 function Wrapper({ children }) {
 	return (
 		<div className="mx-auto container px-6 py-10">
@@ -238,6 +268,10 @@ function Wrapper({ children }) {
 		</div>
 	);
 }
+
+Wrapper.propTypes = {
+	children: PropTypes.node.isRequired,
+};
 
 export default function Experience() {
 	const [showAll, setShowAll] = useState(false);
@@ -339,22 +373,6 @@ export default function Experience() {
 		</>
 	);
 }
-
-ExperienceCard.propTypes = {
-	experience: PropTypes.shape({
-		startDate: PropTypes.string,
-		endDate: PropTypes.string,
-		location: PropTypes.string,
-		company: PropTypes.string,
-		position: PropTypes.string,
-		type: PropTypes.string,
-		description: PropTypes.string,
-		skills: PropTypes.arrayOf(PropTypes.string),
-	}),
-	index: PropTypes.number.isRequired,
-	isEven: PropTypes.bool.isRequired,
-	children: PropTypes.node,
-};
 
 Experience.propTypes = {
 	experience: PropTypes.shape({

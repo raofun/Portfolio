@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faMedal,
-	faGraduationCap,
 	faTrophy,
 	faAward,
 	faChevronDown,
@@ -39,6 +38,10 @@ function Wrapper({ children }) {
 		</div>
 	);
 }
+
+Wrapper.propTypes = {
+	children: PropTypes.node.isRequired,
+};
 
 export default function Education() {
 	const [isExpanded, setIsExpanded] = useState(false);

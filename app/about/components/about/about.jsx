@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Card from "./spotify/card";
 import { motion } from "framer-motion";
 import Me1 from "@/public/image/piel2.jpg";
 import Me2 from "@/public/image/piel3.jpg";
