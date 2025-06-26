@@ -1,7 +1,6 @@
 import querystring from "querystring";
 import { Buffer } from "buffer"; // Import Buffer
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
-const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
+
 const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID || "";
 const clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET || "";
 const refresh_token = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN || "";

@@ -35,7 +35,7 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me1}
-									alt="Alvalens"
+									alt="Raofun"
 									layout="fill"
 									objectFit="cover"
 									placeholder="blur"
@@ -58,7 +58,7 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me2}
-									alt="Alvalens"
+									alt="Raofun"
 									layout="fill"
 									objectFit="cover"
 									placeholder="blur"
@@ -83,7 +83,7 @@ export default function About() {
 								className="w-full h-full">
 								<Image
 									src={Me3}
-									alt="Alvalens"
+									alt="Raofun"
 									layout="fill"
 									objectFit="cover"
 									placeholder="blur"
@@ -108,18 +108,18 @@ export default function About() {
 						type: "spring",
 					}}>
 					<h2 className="text-2xl font-bold tracking-wider mb-3">
-						Alvalen Shafelbilyunazra
+						Raofun Azad
 					</h2>
 					<p className="text-gray-600 text-justify title text-lg">
-						Hey there, I&rsquo;m Alvalen Shafelbilyunazra, a
+						Hey there, I am Raofun Azad Piel, a
 						<span className="text-black font-medium">
 							{" "}
-							passionate Web Developer
+							passionate student
 						</span>{" "}
 						with a growing expertise in
 						<span className="text-black font-medium">
 							{" "}
-							Artificial Intelligence.
+							Cyber Security.
 						</span>{" "}
 						Hailing from Pasuruan, East Java, Indonesia, I&rsquo;m currently
 						pursuing my degree in{" "}
@@ -139,7 +139,7 @@ export default function About() {
 						essential. Let&rsquo;s connect and explore the evolving intersection
 						of web and AI together!
 					</p>
-					<Card />
+					
 				</motion.div>
 			</div>
 		</>

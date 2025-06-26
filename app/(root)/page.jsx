@@ -29,7 +29,7 @@ const COLORS = {
 const MyPage = () => {
 	const fullpageOptions = {
 		anchors: ["home", "about", "projects", "contact"],
-		scrollingSpeed: 5000,
+		scrollingSpeed: 500,
 		licenseKey: "gplv3-license",
 		menu: "#sidebar",
 		lockAnchors: false,
@@ -100,7 +100,7 @@ const MyPage = () => {
 										whileInView={{ x: 0, opacity: 1 }}
 										transition={{ delay: 0.4, type: "spring" }}
 									>
-										Hi! I&#39;m Raofun, a passionate Software engineering student dedicated to learning and delivering quality work. I thrive in collaborative environments and value strong communication.
+										Hi! I am Raofun, a passionate Software engineering student dedicated to learning and delivering quality work. I thrive in collaborative environments and value strong communication.
 									</motion.p>
 									<motion.div
 										className="flex flex-row justify-center items-center space-x-4 mt-10"

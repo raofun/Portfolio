@@ -1,4 +1,1 @@
-User-agent: *
-Disallow:
 
-Sitemap: https://www.alvalens.my.id/sitemap2.xml

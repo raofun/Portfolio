@@ -20,10 +20,10 @@ const Chat = () => {
 			};
 		})(
 			window,
-			"https://cdn-v1.intelliticks.com/prod/common",
+			"",
 			document,
 			"script",
-			"https://app.intelliticks.com",
+			"",
 			"u3cWw3sDpdKexqXCY_c",
 			{}
 		);
